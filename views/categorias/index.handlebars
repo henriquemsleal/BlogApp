@@ -1,0 +1,28 @@
+{{#if postagens}}
+	<h3 class='pl-2 mb-3'>Lista de Postagens por Categoria:</h3>
+	{{#each postagens}}
+		<div class='card'>
+			<div class='card-body'>
+				<h3>{{titulo}}</h3>
+				<h5>{{descricao}}</h5>
+				<small>Data de publicação:
+					{{#formatDate date}}{{/formatDate}}</small><br />
+				<a href='/postagem/{{slug}}'>
+					<button class='btn btn-success'>Leia mais</button>
+				</a>
+			</div>
+		</div>
+	{{else}}
+		<h5>Nenhuma postagem.</h5>
+	{{/each}}
+{{/if}}
+{{#if categorias}}
+	<h4 class='pl-2 mb-3'>Lista de Categorias:</h4>
+	{{#each categorias}}
+		<div class='card mt-2'>
+			<div class='card-body py-0'>
+				<a href='/categoria/{{_id}}'><h5> {{nome}} </h5></a>
+			</div>
+		</div>
+	{{/each}}
+{{/if}}
